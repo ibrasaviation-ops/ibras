@@ -15,18 +15,12 @@ const sendSchadualMeetingTemplatePath = path.join(
   'SchadualMeetingMail.ejs'
 );
 
-const flightBookingEmailTemplatePath = path.join(
-  __dirname,
-  'templates',
-  'FlightBookingMail.ejs'
-);
+const flightBookingEmailTemplatePath = path.join(__dirname, 'templates', 'FlightBookingMail.ejs');
 
-console.log("EMAIL_USER:", process.env.EMAIL_USER, "EMAIL_PASS:", process.env.EMAIL_PASS);
+console.log('EMAIL_USER:', process.env.EMAIL_USER, 'EMAIL_PASS:', process.env.EMAIL_PASS);
 // Create transporter
 const transporter = nodemailer.createTransport({
-  host: 'smtp.gmail.com',
-  port: 465,
-  secure: true, // true for port 465, false for 587
+  service: 'gmail',
   auth: {
     user: process.env.EMAIL_USER,
     pass: process.env.EMAIL_PASS,
