@@ -1,0 +1,100 @@
+@import 'tailwindcss';
+@plugin "daisyui";
+
+/* =========================
+   Tailwind Theme
+========================= */
+@theme {
+  /* Core */
+  --color-background: #050b16;
+  --color-surface: #0b1630;
+  --color-elevated: #122247;
+
+  /* Brand */
+  --color-primary: #133a7c;
+  --color-primary-hover: #1a4a99;
+
+  --color-secondary: #1f4e9a;
+  --color-secondary-hover: #2c63be;
+
+  /* Accent */
+  --color-accent: #a5afbd;
+  --color-accent-hover: #c3cbd6;
+
+  /* Text */
+  --color-foreground: #ffffff;
+  --color-muted: #c8d1de;
+  --color-subtle: #8d99ac;
+
+  /* Borders */
+  --color-border: #23365d;
+
+  /* Light Sections */
+  --color-ink: #0f1f3d;
+  --color-ink-muted: #55657d;
+  --color-ink-faint: #94a3b8;
+
+  /* Premium */
+  --color-highlight: #5d84d6;
+}
+
+/* =========================
+   DaisyUI Theme
+========================= */
+
+@plugin "daisyui/theme" {
+  name: 'ibras';
+  default: true;
+  prefersdark: true;
+  color-scheme: dark;
+
+  /* Base */
+  --color-base-100: #050b16;
+  --color-base-200: #0b1630;
+  --color-base-300: #122247;
+  --color-base-content: #ffffff;
+
+  /* Brand */
+  --color-primary: #133a7c;
+  --color-primary-content: #ffffff;
+
+  --color-secondary: #1f4e9a;
+  --color-secondary-content: #ffffff;
+
+  /* Neutral (Cards/Navbar/Footer) */
+  --color-neutral: #122247;
+  --color-neutral-content: #ffffff;
+
+  /* Accent */
+  --color-accent: #a5afbd;
+  --color-accent-content: #0f1f3d;
+
+  /* States */
+  --color-info: #5d84d6;
+  --color-info-content: #ffffff;
+
+  --color-success: #2e8b57;
+  --color-success-content: #ffffff;
+
+  --color-warning: #d89b27;
+  --color-warning-content: #ffffff;
+
+  --color-error: #d94a4a;
+  --color-error-content: #ffffff;
+
+  /* Radius */
+  --radius-selector: 0.75rem;
+  --radius-field: 0.75rem;
+  --radius-box: 1rem;
+
+  /* Size */
+  --size-selector: 0.25rem;
+  --size-field: 0.25rem;
+
+  /* Border */
+  --border: 1px;
+
+  /* Effects */
+  --depth: 1;
+  --noise: 0;
+}

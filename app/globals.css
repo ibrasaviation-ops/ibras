@@ -1,0 +1,37 @@
+@import 'tailwindcss';
+
+
+@theme {
+  /* === Core Brand Colors === */
+  --color-background: #050B16;      /* rich aviation black-blue */
+  --color-surface: #0B1630;         /* card background */
+  --color-elevated: #122247;        /* hover cards */
+
+  /* === Logo Navy === */
+  --color-primary: #133A7C;         /* main logo blue */
+  --color-primary-hover: #1A4A99;
+
+  /* === Secondary Navy === */
+  --color-secondary: #1F4E9A;
+  --color-secondary-hover: #2C63BE;
+
+  /* === Aircraft Silver === */
+  --color-accent: #A5AFBD;
+  --color-accent-hover: #C3CBD6;
+
+  /* === Text === */
+  --color-foreground: #FFFFFF;
+  --color-muted: #C8D1DE;
+  --color-subtle: #8D99AC;
+
+  /* === Borders === */
+  --color-border: #23365D;
+
+  /* === Light Sections === */
+  --color-ink: #0F1F3D;
+  --color-ink-muted: #55657D;
+  --color-ink-faint: #94A3B8;
+
+  /* === Special Premium Highlight === */
+  --color-highlight: #5D84D6;
+}
