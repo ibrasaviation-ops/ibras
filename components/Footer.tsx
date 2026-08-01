@@ -35,8 +35,8 @@ const Footer = () => {
               <Image
                 src="/logo.png"
                 alt="Ibras Aviation Logo"
-                width={60}
-                height={60}
+                width={70}
+                height={70}
                 className="relative object-contain"
               />
             </div>

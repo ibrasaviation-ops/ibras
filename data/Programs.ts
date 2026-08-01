@@ -238,8 +238,8 @@ export const program1: Program[] = [
       'Train to operate safely in IFR conditions using instruments, procedures, and controlled airspace navigation.',
     learningOutcomes: null,
     courseIncludes: [
-      '<b>40 Hours</b> Total Flight Time (Single Engine)',
-      '<b>20 Hours</b> Dual Instruction',
+      '<b>45 Hours</b> Total Flight Time (Single Engine)',
+      '<b>30 Hours</b> Dual Instruction',
       '<b>10 Hours</b> Ground Instruction',
     ],
     prerequisites: null,

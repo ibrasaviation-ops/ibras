@@ -148,11 +148,20 @@ export default function Navbar() {
 
   const renderLinks = (mobile = false) =>
     NAV_LINKS.map(({ label, id, href }, index) => {
-      const isActive = !!id && activeId === id;
+      const isActive = id && activeId === id;
 
       if (mobile) {
-        const className =
-          'block w-full rounded-xl px-4 py-3.5 text-left text-[15px] font-medium tracking-wide text-muted transition-all duration-300 ease-out hover:bg-elevated/70 hover:text-foreground active:scale-[0.98]';
+        const baseClassName =
+          'block w-full rounded-xl px-4 py-3.5 text-left text-[15px] font-medium tracking-wide transition-all duration-300 ease-out active:scale-[0.98]';
+
+        // Mobile: active white background
+        const bgEffectClass = `relative overflow-hidden before:absolute before:inset-0 before:rounded-xl before:transition-all before:duration-300
+      before:bg-white/0
+      hover:before:bg-white/15
+      active:before:bg-white/20
+      ${isActive ? 'before:bg-white! text-primary' : 'text-muted'}`;
+
+        const className = `${baseClassName} ${bgEffectClass}`;
 
         const style = {
           transitionDelay: mobileOpen ? `${index * 40}ms` : '0ms',
@@ -169,7 +178,7 @@ export default function Navbar() {
               } transition-[opacity,transform,background-color,color]`}
               style={style}
             >
-              {label}
+              <span className="relative z-10">{label}</span>
             </Link>
           );
         }
@@ -183,27 +192,30 @@ export default function Navbar() {
             } transition-[opacity,transform,background-color,color]`}
             style={style}
           >
-            {label}
+            <span className="relative z-10">{label}</span>
           </button>
         );
       }
 
-      // Desktop link - no underline
-      const desktopClassName = `group relative rounded-full px-4 py-2 text-[13px] font-medium tracking-wide transition-colors duration-300 ease-out cursor-pointer ${
-        isActive ? 'text-foreground' : 'text-muted hover:text-foreground'
-      }`;
+      // Desktop: active white background
+      const desktopClassName = `group relative rounded-full px-4 py-2 text-[13px] font-medium tracking-wide transition-all duration-300 ease-out cursor-pointer
+    before:absolute before:inset-0 before:rounded-full before:transition-all before:duration-300
+    before:bg-white/0
+    hover:before:bg-white/12
+    active:before:bg-white/20 active:scale-[0.97]
+    ${isActive ? 'before:bg-white! text-primary' : 'text-muted '}`;
 
       if (href) {
         return (
           <Link key={label} href={href} className={desktopClassName}>
-            {label}
+            <span className="relative z-10">{label}</span>
           </Link>
         );
       }
 
       return (
         <button key={label} onClick={() => scrollToSection(id!)} className={desktopClassName}>
-          {label}
+          <span className="relative z-10">{label}</span>
         </button>
       );
     });
@@ -214,7 +226,7 @@ export default function Navbar() {
       ref={menuRef}
       className="fixed inset-x-0 top-0 z-50 px-3 pt-3 transition-all duration-500 ease-out md:px-6 md:pt-5"
     >
-      <div className="mx-auto flex h-16 max-w-screen-2xl items-center justify-between rounded-full bg-background/80 px-5 shadow-[0_8px_32px_rgba(0,0,0,0.4)] backdrop-blur-xl md:h-17 md:px-8">
+      <div className="mx-auto flex h-16 max-w-screen-2xl items-center justify-between rounded-full bg-background/95 px-5 shadow-[0_8px_32px_rgba(0,0,0,0.4)] backdrop-blur-xl md:h-17 md:px-8">
         {/* Logo */}
         <button
           onClick={scrollToTop}

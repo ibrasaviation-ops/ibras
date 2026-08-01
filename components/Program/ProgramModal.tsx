@@ -187,6 +187,25 @@ export default function ProgramModal({ program, isActive, onClose }: ProgramModa
               </section>
             )}
 
+            {program.prerequisites && program.prerequisites.length > 0 && (
+              <section className=" border-ink/10  p-4  sm:p-5">
+                <h3 className="mb-4 font-serif text-xl font-semibold text-ink">
+                  To enroll in the Accelerated Commercial Pilot License (CPL) – Part 61 program,
+                  students must have:
+                </h3>
+                <div className="space-y-2.5">
+                  {program.prerequisites.map((item, index) => (
+                    <div key={index} className="flex items-start gap-3">
+                      <div className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center  text-primary">
+                        <FaCheck className="text-[9px]" />
+                      </div>
+                      <p className="text-ink-muted" dangerouslySetInnerHTML={{ __html: item }} />
+                    </div>
+                  ))}
+                </div>
+              </section>
+            )}
+
             {/* Third Party Fees */}
             {program.thirdPartyFees && (
               <section className="rounded-2xl border border-accent/25 bg-accent/[0.08] p-4">

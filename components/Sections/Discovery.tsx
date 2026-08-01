@@ -6,10 +6,17 @@ const Discovery = () => {
   return (
     <section id="discovery">
       <div className="relative h-screen w-full snap-start overflow-hidden">
-        <div className="absolute inset-0">
+        {/* <div className="absolute inset-0">
           <video autoPlay muted loop playsInline className="h-full w-full object-cover">
             <source src="/discovery.mp4" type="video/mp4" />
           </video>
+
+
+          <div className="absolute inset-0 bg-background/20" />
+          <div className="absolute inset-0 bg-linear-to-t from-background/80 via-background/10 to-transparent" />
+        </div> */}
+        <div className="absolute inset-0">
+          <img src="/discovery-flight.png" alt="Discovery" className="h-full w-full object-cover" />
 
           {/* Layered overlays */}
           <div className="absolute inset-0 bg-background/20" />
