@@ -125,7 +125,7 @@ const AboutServices = () => {
           <div className="order-first lg:order-2">
             <div className="relative h-64 overflow-hidden rounded-3xl shadow-[0_24px_60px_-20px_rgba(15,31,61,0.35)] sm:h-80 lg:h-full lg:min-h-130">
               <Image
-                src="/traning.jfif"
+                src="/service.png"
                 alt="Interior cabin of a private jet, showcasing premium seating and finishes"
                 fill
                 sizes="(min-width: 1024px) 33vw, 100vw"
@@ -143,19 +143,6 @@ const AboutServices = () => {
           </div>
         </div>
 
-        {/* CTA */}
-        {/* <div className="mt-14 flex justify-center sm:mt-16 lg:mt-20 ">
-          <a
-            href="#programs"
-            className="group inline-flex h-14 items-center justify-center gap-2.5 rounded-2xl bg-ink px-8 text-sm font-semibold uppercase tracking-[0.15em] text-white shadow-[0_8px_30px_rgba(15,31,61,0.25)] transition-all duration-300 hover:translate-x-1 hover:bg-[#0a1528] hover:shadow-[0_12px_40px_rgba(15,31,61,0.35)] focus:outline-none focus-visible:ring-2 focus-visible:ring-highlight focus-visible:ring-offset-2 sm:px-9  cursor-pointer"
-          >
-            Explore Programs
-            <FaArrowRightLong
-              className="transition-transform duration-300 group-hover:translate-x-1"
-              aria-hidden="true"
-            />
-          </a>
-        </div> */}
         <div className="relative z-20 mt-14 flex justify-center sm:mt-16 lg:mt-20">
           <a
             href="#programs"

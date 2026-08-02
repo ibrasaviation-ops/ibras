@@ -10,7 +10,7 @@ export default function About() {
       className="relative w-full  snap-start overflow-hidden bg-white py-20 md:py-28 px-5"
     >
       {/* Background - Clean white with subtle pattern */}
-      <div className="absolute inset-0">
+      {/* <div className="absolute inset-0">
         <div
           className="absolute inset-0 opacity-[0.03]"
           style={{
@@ -19,7 +19,7 @@ export default function About() {
             backgroundSize: '52px 52px',
           }}
         />
-      </div>
+      </div> */}
       {/* Content Container */}
       <div className="relative z-10 mx-auto flex min-h-screen max-w-7xl items-center px-5 sm:px-8 lg:px-16">
         <div className="grid w-full grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-16">
@@ -114,7 +114,7 @@ export default function About() {
               <div className="relative overflow-hidden rounded-2xl border border-slate-200/80 shadow-xl shadow-slate-200/50">
                 {/* The Image */}
                 <Image
-                  src="/about.jfif"
+                  src="/about.png"
                   alt="Ibras Aviation - Professional Flight Training"
                   width={600}
                   height={700}
