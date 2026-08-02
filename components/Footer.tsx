@@ -1,9 +1,10 @@
 'use client';
 import { usePathname } from 'next/navigation';
 import { FaFacebook, FaInstagram, FaTiktok } from 'react-icons/fa';
-import { Phone, Mail, MapPin } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { useState } from 'react';
 
 const AIRPORTS = [
   'North Perry Airport (HWO)',
@@ -14,6 +15,7 @@ const AIRPORTS = [
 
 const Footer = () => {
   const pathname = usePathname();
+  const [copied, setCopied] = useState(false);
 
   return (
     <footer
@@ -28,23 +30,26 @@ const Footer = () => {
       </div>
 
       <div className="relative z-10 mx-auto max-w-7xl">
-        {/* ── Compact Brand header ──────────────────────────────────────── */}
-        <div className="mb-10 flex flex-col items-start gap-4 border-b border-border pb-8 md:flex-row md:items-center md:justify-between md:gap-8">
-          <div className="flex items-center gap-4">
-            <div className="relative shrink-0">
+        {/* ── Compact Brand header with larger logo ──────────────────────── */}
+        <div className="mb-10 flex flex-col items-start gap-6 border-b border-border pb-8 md:flex-row md:items-center md:justify-between md:gap-8">
+          <div className="flex items-center gap-5">
+            <div className="relative shrink-0 group">
               <Image
                 src="/logo.png"
                 alt="Ibras Aviation Logo"
-                width={70}
-                height={70}
-                className="relative object-contain"
+                width={100}
+                height={100}
+                className="relative object-contain transition-transform duration-300 group-hover:scale-105"
+                priority
               />
+              {/* Glow effect behind logo */}
+              <div className="absolute inset-0 -m-4 rounded-full bg-highlight/5 blur-xl opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
             </div>
             <div>
-              <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-highlight">
+              <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-highlight">
                 Ibras Aviation
               </p>
-              <h3 className="font-serif text-lg font-semibold text-foreground">
+              <h3 className="font-serif text-xl font-semibold text-foreground">
                 FAA Part 61 Flight Training
               </h3>
             </div>
@@ -96,35 +101,54 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Contact Info */}
+          {/* Contact Info - Enhanced with proper links */}
           <div>
             <h4 className="mb-3 text-[10px] font-bold uppercase tracking-[0.2em] text-subtle">
               Contact Info
             </h4>
-            <ul className="space-y-2">
+            <ul className="space-y-3">
               <li className="group flex items-start gap-3">
-                <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-accent/10">
-                  <Phone className="h-3.5 w-3.5 text-accent" />
+                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-accent/10 transition-colors group-hover:bg-accent/20">
+                  <Phone className="h-4 w-4 text-accent" />
                 </span>
-                <span className="pt-1 text-xs text-muted transition-colors group-hover:text-foreground">
-                  +1 (954) 799-2097
-                </span>
+                <div className="pt-0.5">
+                  <a
+                    href="tel:+19547992097"
+                    className="text-xs text-muted transition-colors hover:text-foreground hover:underline cursor-pointer"
+                  >
+                    +1 (954) 799-2097
+                  </a>
+                </div>
               </li>
               <li className="group flex items-start gap-3">
-                <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-accent/10">
-                  <Mail className="h-3.5 w-3.5 text-accent" />
+                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-accent/10 transition-colors group-hover:bg-accent/20">
+                  <Mail className="h-4 w-4 text-accent" />
                 </span>
-                <span className="pt-1 text-xs text-muted transition-colors group-hover:text-foreground">
-                  Ibrasaviation@gmail.com
-                </span>
+                <div className="pt-0.5">
+                  <div className="flex items-center gap-2">
+                    <a
+                      href="mailto:Ibrasaviation@gmail.com"
+                      className="text-xs text-muted transition-colors hover:text-foreground hover:underline cursor-pointer"
+                    >
+                      Ibrasaviation@gmail.com
+                    </a>
+                  </div>
+                </div>
               </li>
               <li className="group flex items-start gap-3">
-                <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-accent/10">
-                  <MapPin className="h-3.5 w-3.5 text-accent" />
+                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-accent/10 transition-colors group-hover:bg-accent/20">
+                  <MapPin className="h-4 w-4 text-accent" />
                 </span>
-                <span className="pt-1 text-xs capitalize leading-relaxed text-muted transition-colors group-hover:text-foreground">
-                  Miami, South Florida, USA
-                </span>
+                <div className="pt-0.5">
+                  <a
+                    href="https://www.google.com/maps/place/Miami,+FL,+USA"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-xs capitalize leading-relaxed text-muted transition-colors hover:text-foreground hover:underline"
+                  >
+                    Miami, South Florida, USA
+                  </a>
+                </div>
               </li>
             </ul>
           </div>
@@ -138,7 +162,7 @@ const Footer = () => {
               {AIRPORTS.map((airport) => (
                 <li key={airport}>
                   <span className="group flex cursor-pointer items-center gap-2 py-1.5 text-xs text-muted transition-colors hover:text-foreground">
-                    <span className="h-1 w-1 shrink-0 rounded-full bg-highlight/60" />
+                    <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-highlight/60 transition-colors group-hover:bg-highlight" />
                     {airport}
                   </span>
                 </li>
@@ -146,37 +170,39 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Social Media */}
+          {/* Social Media - Enhanced with hover effects */}
           <div>
             <h4 className="mb-3 text-[10px] font-bold uppercase tracking-[0.2em] text-subtle">
               Follow Us
             </h4>
-            <div className="flex gap-2.5">
+            <div className="flex gap-3">
               <a
                 href="#"
-                className="group flex h-9 w-9 items-center justify-center rounded-full border border-border bg-elevated/50 text-muted transition-colors hover:border-highlight/50 hover:text-foreground"
+                className="group flex h-10 w-10 items-center justify-center rounded-full border border-border bg-elevated/50 text-muted transition-all duration-300 hover:border-highlight/50 hover:bg-highlight/10 hover:text-foreground hover:shadow-lg hover:shadow-highlight/10"
                 aria-label="Facebook"
               >
-                <FaFacebook className="h-3.5 w-3.5 transition-transform group-hover:scale-110" />
+                <FaFacebook className="h-4 w-4 transition-all duration-300 group-hover:scale-110" />
               </a>
               <a
                 href="https://www.instagram.com/pilotibrahimm?igsh=MWtzcTJhc296dDMwMg%3D%3D&utm_source=qr"
                 target="_blank"
-                className="group flex h-9 w-9 items-center justify-center rounded-full border border-border bg-elevated/50 text-muted transition-colors hover:border-highlight/50 hover:text-foreground"
+                rel="noopener noreferrer"
+                className="group flex h-10 w-10 items-center justify-center rounded-full border border-border bg-elevated/50 text-muted transition-all duration-300 hover:border-highlight/50 hover:bg-highlight/10 hover:text-foreground hover:shadow-lg hover:shadow-highlight/10"
                 aria-label="Instagram"
               >
-                <FaInstagram className="h-3.5 w-3.5 transition-transform group-hover:scale-110" />
+                <FaInstagram className="h-4 w-4 transition-all duration-300 group-hover:scale-110" />
               </a>
               <a
                 href="https://www.tiktok.com/@pilotibrahim1"
                 target="_blank"
-                className="group flex h-9 w-9 items-center justify-center rounded-full border border-border bg-elevated/50 text-muted transition-colors hover:border-highlight/50 hover:text-foreground"
+                rel="noopener noreferrer"
+                className="group flex h-10 w-10 items-center justify-center rounded-full border border-border bg-elevated/50 text-muted transition-all duration-300 hover:border-highlight/50 hover:bg-highlight/10 hover:text-foreground hover:shadow-lg hover:shadow-highlight/10"
                 aria-label="Tiktok"
               >
-                <FaTiktok className="h-3.5 w-3.5 transition-transform group-hover:scale-110" />
+                <FaTiktok className="h-4 w-4 transition-all duration-300 group-hover:scale-110" />
               </a>
             </div>
-            <p className="mt-2 text-[10px] text-subtle">Stay connected with us on social media</p>
+            <p className="mt-2 text-[10px] text-subtle">Connect with us for updates and news</p>
           </div>
         </div>
 

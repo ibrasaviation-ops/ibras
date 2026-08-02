@@ -19,8 +19,8 @@ const Discovery = () => {
           <img src="/discovery-flight.png" alt="Discovery" className="h-full w-full object-cover" />
 
           {/* Layered overlays */}
-          <div className="absolute inset-0 bg-background/20" />
-          <div className="absolute inset-0 bg-linear-to-t from-background/80 via-background/10 to-transparent" />
+          {/* <div className="absolute inset-0 bg-background/20" />
+          <div className="absolute inset-0 bg-linear-to-t from-background/80 via-background/10 to-transparent" /> */}
         </div>
 
         {/* Content */}

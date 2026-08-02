@@ -11,29 +11,29 @@ export default function Home() {
           <video autoPlay muted loop playsInline className="h-full w-full object-cover">
             <source src="/hero.mp4" type="video/mp4" />
           </video>
-   
         </div>
 
         {/* Content */}
-        <div className="absolute inset-0 z-20 flex items-center justify-center px-5 sm:px-8 lg:px-16">
+        <div className="absolute inset-0 z-20 flex items-center justify-center px-5 sm:px-8 lg:px-16 pt-15">
           <div className="flex w-full max-w-4xl flex-col items-center text-center">
             {/* Badge - Clean white with subtle background */}
             <div className="mb-5 inline-flex items-center gap-2.5  px-4 py-2 sm:mb-6">
-              <span className="text-[0.80rem] font-bold uppercase tracking-[0.25em] text-white/80 sm:tracking-[0.35em]">
+              <span className=" text-[0.65rem] sm:text-[0.80rem] font-bold uppercase tracking-[0.25em] text-white/80 sm:tracking-[0.35em]">
                 FAA Part 61 Training • Personalized Instruction • Miami
               </span>
             </div>
 
             {/* Heading - Clean white text with subtle shadow */}
+
             <h1
-              className="max-w-2xl font-serif font-bold leading-[1.05] text-white drop-shadow-[0_2px_15px_rgba(0,0,0,0.3)]"
+              className="max-w-2xl font-serif font-bold leading-[1.05] text-foreground drop-shadow-[0_2px_20px_rgba(5,11,22,0.6)]"
               style={{
                 fontSize: 'clamp(2.25rem, 5.2vw, 4.25rem)',
               }}
             >
               Your Pilot Journey
               <br />
-              {/* Starts <span className="text-highlight">Here</span> */}
+              Starts{' '}
               <span
                 className="inline-block bg-clip-text text-transparent drop-shadow-[0_0_20px_rgba(255,215,0,0.2)] transition-all duration-300 hover:-translate-y-0.5"
                 style={{
@@ -46,6 +46,7 @@ export default function Home() {
                 Here
               </span>
             </h1>
+
 
             {/* Subheading - White with good contrast */}
             <p

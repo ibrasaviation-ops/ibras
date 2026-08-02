@@ -71,10 +71,11 @@ export default function Experience() {
                 tailored to your goals.
               </p>
 
+              {/* CTA - Light theme version */}
               <div className="mt-8 sm:mt-10">
                 <Link
                   href="/team"
-                  className="group inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.15em] transition-all duration-300 hover:-translate-y-0.5"
+                  className="group inline-flex items-center gap-3 text-sm font-semibold uppercase tracking-[0.15em] transition-all duration-300 hover:-translate-y-0.5"
                   style={{
                     backgroundImage:
                       'linear-gradient(135deg, var(--color-secondary) 0%, var(--color-primary) 100%)',
@@ -83,7 +84,7 @@ export default function Experience() {
                   }}
                 >
                   Meet the Team
-                  <FaArrowRightLong className="transition-transform duration-200 group-hover:translate-x-1 text-white" />
+                  <FaArrowRightLong className="transition-transform duration-200 group-hover:translate-x-1 text-primary" />
                 </Link>
               </div>
             </div>

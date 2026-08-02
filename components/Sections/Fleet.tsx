@@ -11,7 +11,6 @@ export default function Fleet() {
           <video autoPlay muted loop playsInline className="h-full w-full object-cover">
             <source src="/fleet.mp4" type="video/mp4" />
           </video>
-  
         </div>
 
         {/* Content */}
@@ -32,7 +31,7 @@ export default function Fleet() {
                   fontSize: 'clamp(1.8rem, 5vw, 3rem)',
                 }}
               >
-                Modern Aircraft.
+                Modern Aircraft
                 <br />
                 <span
                   className="inline-block bg-clip-text text-transparent drop-shadow-[0_0_20px_rgba(255,215,0,0.2)] transition-all duration-300 hover:-translate-y-0.5"
@@ -45,7 +44,6 @@ export default function Fleet() {
                 >
                   Personalized Instruction
                 </span>
-                .
               </h2>
 
               {/* Description - White with good contrast, matching hero */}
@@ -64,20 +62,25 @@ export default function Fleet() {
                 checkride.
               </p>
 
-              {/* CTA - Matching hero link style */}
-              <div className="mt-7 sm:mt-9">
+              {/* CTA - Light theme version */}
+              <div className="mt-8 sm:mt-10">
                 <Link
                   href="/fleet"
-                  className="group inline-flex h-12 items-center justify-center gap-2.5 rounded-sm bg-white px-7 text-[10px] font-semibold uppercase tracking-[0.15em] text-[#1a1a2e] shadow-[0_8px_30px_rgba(0,0,0,0.2)] transition-all duration-200 hover:bg-white/90 hover:scale-[1.02] hover:shadow-[0_12px_40px_rgba(0,0,0,0.25)] sm:px-8 sm:text-xs"
+                  className="group inline-flex items-center gap-3 text-sm font-semibold uppercase tracking-[0.15em] transition-all duration-300 hover:-translate-y-0.5"
+                  style={{
+                    backgroundImage:
+                      'linear-gradient(135deg, var(--color-secondary) 0%, var(--color-primary) 100%)',
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent',
+                  }}
                 >
                   See the Fleet
-                  <FaArrowRightLong className="transition-transform duration-200 group-hover:translate-x-1" />
+                  <FaArrowRightLong className="transition-transform duration-200 group-hover:translate-x-1 text-primary" />
                 </Link>
               </div>
             </div>
           </div>
         </div>
-
       </div>
     </section>
   );
