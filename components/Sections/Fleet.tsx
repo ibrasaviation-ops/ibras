@@ -1,96 +1,83 @@
 import Link from 'next/link';
 import { FaArrowRightLong } from 'react-icons/fa6';
+import { GoArrowDown } from 'react-icons/go';
 
 export default function Fleet() {
   return (
     <section id="fleet">
       <div className="relative h-screen w-full snap-start overflow-hidden">
-        {/* Background */}
+        {/* Background - No gradients, just clean overlay */}
         <div className="absolute inset-0">
           <video autoPlay muted loop playsInline className="h-full w-full object-cover">
             <source src="/fleet.mp4" type="video/mp4" />
           </video>
-
-          {/* Grid texture */}
-          <div
-            className="absolute inset-0 opacity-[0.05]"
-            style={{
-              backgroundImage:
-                'linear-gradient(to right, var(--color-border) 1px, transparent 1px), linear-gradient(to bottom, var(--color-border) 1px, transparent 1px)',
-              backgroundSize: '56px 56px',
-            }}
-          />
-
-          {/* Right scrim for text legibility */}
-          <div className="absolute inset-0 bg-linear-to-l from-background/75 via-background/25 to-transparent md:from-background/70 md:via-background/10 md:to-transparent/0" />
-
-          {/* Radial spotlight */}
-          <div
-            className="absolute inset-0"
-            style={{
-              background:
-                'radial-gradient(ellipse 60% 55% at 28% 45%, transparent 30%, color-mix(in srgb, var(--color-background) 35%, transparent) 100%)',
-            }}
-          />
-
-          {/* Bottom transition gradient */}
-          <div className="absolute bottom-0 left-0 right-0 h-1/4 bg-linear-to-t from-background/75 via-surface/30 to-transparent" />
+  
         </div>
 
         {/* Content */}
-        <div className="absolute inset-0 z-10 flex items-center px-5 sm:px-8 md:px-12 lg:px-16">
-          <div className="mx-auto w-full max-w-7xl items-end gap-5">
-            {/* Right: narrative */}
-            <div className="order-1 ml-auto max-w-xl text-right md:max-w-2xl lg:order-2">
-              {/* Eyebrow badge */}
-              <div className="mb-5 inline-flex items-center gap-2.5 rounded-full px-4 py-2 sm:mb-6">
-                <span className="text-[9px] font-bold uppercase tracking-[0.25em] text-accent sm:text-[11px] sm:tracking-[0.35em]">
+        <div className="absolute inset-0 z-20 flex items-center px-5 sm:px-8 lg:px-16">
+          <div className="mx-auto w-full max-w-7xl">
+            <div className="ml-auto max-w-xl text-right md:max-w-2xl">
+              {/* Badge - Clean white with subtle background, matching hero */}
+              <div className="mb-5 inline-flex items-center gap-2.5 px-4 py-2 sm:mb-6">
+                <span className="text-[0.80rem] font-bold uppercase tracking-[0.25em] text-white/80 sm:tracking-[0.35em]">
                   Modern Training Fleet
                 </span>
               </div>
 
-              {/* Heading */}
+              {/* Heading - Clean white with subtle shadow, matching hero */}
               <h2
-                className="font-serif font-bold leading-[1.05] text-foreground drop-shadow-[0_2px_20px_rgba(5,11,22,0.6)]"
+                className="font-serif font-bold leading-[1.05] text-white drop-shadow-[0_2px_15px_rgba(0,0,0,0.3)]"
                 style={{
                   fontSize: 'clamp(1.8rem, 5vw, 3rem)',
                 }}
               >
                 Modern Aircraft.
                 <br />
-                <span className="bg-linear-to-r from-highlight to-secondary-hover bg-clip-text text-transparent">
+                <span
+                  className="inline-block bg-clip-text text-transparent drop-shadow-[0_0_20px_rgba(255,215,0,0.2)] transition-all duration-300 hover:-translate-y-0.5"
+                  style={{
+                    backgroundImage:
+                      'linear-gradient(135deg, var(--color-secondary) 0%, var(--color-primary) 100%)',
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent',
+                  }}
+                >
                   Personalized Instruction
                 </span>
                 .
               </h2>
 
-              {/* Description */}
-              <p className="ml-auto mt-5 max-w-xl text-base leading-relaxed text-muted sm:mt-6 md:text-lg">
+              {/* Description - White with good contrast, matching hero */}
+              <p
+                className="ml-auto mt-5 max-w-xl text-white/90 drop-shadow-[0_2px_8px_rgba(0,0,0,0.2)] sm:mt-6"
+                style={{
+                  fontSize: 'clamp(0.95rem, 1.6vw, 1.15rem)',
+                  lineHeight: '1.7',
+                }}
+              >
                 Train in well-maintained,{' '}
-                <span className="font-semibold text-foreground">
-                  FAA-compliant training aircraft
-                </span>{' '}
-                with dedicated{' '}
-                <span className="font-semibold text-foreground">one-on-one instruction</span> to
-                your goals. Every lesson is structured to maximize progress, build confidence, and
-                prepare you for success from your first flight through your FAA checkride
+                <span className="font-medium text-white">FAA-compliant training aircraft</span> with
+                dedicated <span className="font-medium text-white">one-on-one instruction</span>{' '}
+                tailored to your goals. Every lesson is structured to maximize progress, build
+                confidence, and prepare you for success from your first flight through your FAA
+                checkride.
               </p>
 
-              {/* CTA */}
-              <Link
-                href="/fleet"
-                className="group relative mt-7 inline-flex items-center gap-2 text-[12px] font-bold uppercase tracking-[0.18em] text-foreground sm:mt-9 sm:text-xs sm:tracking-[0.3em]"
-              >
-                <span className="relative">
+              {/* CTA - Matching hero link style */}
+              <div className="mt-7 sm:mt-9">
+                <Link
+                  href="/fleet"
+                  className="group inline-flex h-12 items-center justify-center gap-2.5 rounded-sm bg-white px-7 text-[10px] font-semibold uppercase tracking-[0.15em] text-[#1a1a2e] shadow-[0_8px_30px_rgba(0,0,0,0.2)] transition-all duration-200 hover:bg-white/90 hover:scale-[1.02] hover:shadow-[0_12px_40px_rgba(0,0,0,0.25)] sm:px-8 sm:text-xs"
+                >
                   See the Fleet
-                  <span className="absolute -bottom-1.5 left-0 h-px w-full bg-white/15" />
-                  <span className="absolute -bottom-1.5 left-0 h-px w-0 bg-highlight shadow-[0_0_8px_var(--color-highlight)] transition-all duration-200 group-hover:w-full" />
-                </span>
-                <FaArrowRightLong className="transition-transform duration-200 group-hover:translate-x-1.5" />
-              </Link>
+                  <FaArrowRightLong className="transition-transform duration-200 group-hover:translate-x-1" />
+                </Link>
+              </div>
             </div>
           </div>
         </div>
+
       </div>
     </section>
   );

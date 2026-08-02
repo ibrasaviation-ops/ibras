@@ -35,115 +35,110 @@ const Services = () => {
   return (
     <section
       id="services"
-      className="relative w-full overflow-hidden bg-linear-to-b from-background via-surface to-background py-24 md:py-36 snap-start"
+      className="relative w-full snap-start overflow-hidden bg-white py-20 md:py-28"
     >
-      {/* Background depth - simplified */}
-      <div className="pointer-events-none absolute inset-0">
-        {/* Blueprint-inspired grid, faint */}
+      {/* Background - Clean white with subtle pattern */}
+      <div className="absolute inset-0">
         <div
-          className="absolute inset-0 opacity-[0.07]"
+          className="absolute inset-0 opacity-[0.03]"
           style={{
             backgroundImage:
-              'linear-gradient(to right, var(--color-border) 1px, transparent 1px), linear-gradient(to bottom, var(--color-border) 1px, transparent 1px)',
-            backgroundSize: '64px 64px',
-            maskImage: 'radial-gradient(ellipse 70% 60% at 50% 40%, black 40%, transparent 100%)',
-            WebkitMaskImage:
-              'radial-gradient(ellipse 70% 60% at 50% 40%, black 40%, transparent 100%)',
-          }}
-        />
-
-        {/* Center vignette to keep focus on content */}
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              'radial-gradient(ellipse at 50% 35%, transparent 45%, color-mix(in srgb, var(--color-background) 55%, transparent) 100%)',
+              'linear-gradient(#1a1a2e 1px, transparent 1px), linear-gradient(90deg, #1a1a2e 1px, transparent 1px)',
+            backgroundSize: '52px 52px',
           }}
         />
       </div>
 
-      <div className="relative mx-auto max-w-screen-2xl px-6 md:px-12">
-        <div className="mx-auto flex w-full max-w-4xl flex-col items-center gap-6 text-center">
-          {/* Eyebrow badge */}
-          <div className="inline-flex items-center gap-2.5 rounded-full px-4 py-2 backdrop-blur-md">
-            <span className="text-[9px] font-bold uppercase tracking-[0.25em] text-accent sm:text-[11px] sm:tracking-[0.35em]">
-              FAA Part 61 Training · Miami
-            </span>
-          </div>
-
-          {/* Headline */}
-          <h1
-            className="text-balance font-serif font-semibold uppercase leading-[0.98] tracking-tight text-foreground"
-            style={{
-              fontSize: 'clamp(2.25rem, 5.5vw, 4.75rem)',
-            }}
-          >
-            Checkride Success
-            <br />
-            <span className="bg-linear-to-r from-highlight to-secondary-hover bg-clip-text text-transparent">
-              Starts Here
-            </span>
-          </h1>
-
-          {/* Description */}
-          <p className="mx-auto max-w-xl text-base leading-relaxed text-muted md:text-lg">
-            <span className="font-semibold text-foreground">One-on-one instruction</span>, realistic{' '}
-            <span className="font-semibold text-foreground">mock evaluations</span>, and
-            comprehensive oral preparation designed to help you approach your FAA practical test
-            with confidence.
-          </p>
-
-          {/* Journey flow */}
-          <div className="mt-6 grid w-full gap-5 sm:grid-cols-2 md:mt-10">
-            {allCards.map((card, i) => {
-              const Icon = card.icon;
-              const step = String(i + 1).padStart(2, '0');
-
-              return (
-                <div
-                  key={card.heading}
-                  className="group relative flex flex-col items-center rounded-2xl border border-white/10 bg-white/[0.04] px-6 py-8 text-center shadow-[0_16px_40px_rgba(0,0,0,0.35)] backdrop-blur-xl transition-colors hover:border-highlight/40 hover:bg-white/[0.07]"
-                >
-                  {/* Step marker */}
-                  <span className="absolute right-5 top-5 font-serif text-[11px] font-medium tracking-[0.2em] text-subtle/60">
-                    {step}
-                  </span>
-
-                  {/* Icon container */}
-                  <div className="relative mb-5 flex h-14 w-14 items-center justify-center rounded-full border border-white/10 bg-linear-to-br from-white/[0.08] to-white/[0.02] text-muted transition-colors group-hover:border-highlight/50 group-hover:text-foreground">
-                    <Icon size={20} className="relative z-10" />
-                  </div>
-
-                  <h3 className="text-lg font-semibold tracking-tight text-foreground">
-                    {card.heading}
-                  </h3>
-
-                  <p className="mt-2 max-w-[22ch] text-sm leading-6 text-muted">
-                    {card.description}
-                  </p>
-
-                  {/* Connector to next step */}
-                  {i < allCards.length - 1 && (
-                    <span className="pointer-events-none absolute -bottom-5 left-1/2 hidden h-5 w-px -translate-x-1/2 bg-linear-to-b from-white/20 to-transparent sm:block md:hidden lg:block" />
-                  )}
-                </div>
-              );
-            })}
-          </div>
-
-          {/* CTA */}
-          <div className="mt-4">
-            <a
-              href="#programs"
-              className="group relative mt-6 inline-flex items-center gap-2 text-[12px] font-bold uppercase tracking-[0.18em] text-accent hover:text-foreground transition-colors sm:mt-8 sm:text-xs sm:tracking-[0.3em]"
-            >
-              <span className="relative">
-                Explore More
-                <span className="absolute -bottom-1.5 left-0 h-px w-full bg-white/15" />
-                <span className="absolute -bottom-1.5 left-0 h-px w-0 bg-highlight shadow-[0_0_8px_var(--color-highlight)] transition-all duration-300 group-hover:w-full" />
+      {/* Content */}
+      <div className="relative z-10 flex items-center px-5 sm:px-8 lg:px-16">
+        <div className="mx-auto w-full max-w-4xl">
+          <div className="flex flex-col items-center text-center">
+            {/* Badge - Clean dark text, matching hero style but inverted */}
+            <div className="mb-5 inline-flex items-center gap-2.5 px-4 py-2 sm:mb-6">
+              <span className="text-[0.80rem] font-bold uppercase tracking-[0.25em] text-[#1a1a2e]/60 sm:tracking-[0.35em]">
+                FAA Part 61 Training · Miami
               </span>
-              <FaArrowRightLong className="transition-transform duration-300 group-hover:translate-x-1.5" />
-            </a>
+            </div>
+
+            {/* Heading - Dark text with subtle shadow */}
+            <h2
+              className="font-serif font-bold leading-[1.05] text-[#1a1a2e]"
+              style={{
+                fontSize: 'clamp(2.25rem, 5.5vw, 4.75rem)',
+              }}
+            >
+              Checkride Success
+              <br />
+              <span
+                className="inline-block bg-clip-text text-transparent transition-all duration-300 hover:-translate-y-0.5"
+                style={{
+                  backgroundImage:
+                    'linear-gradient(135deg, var(--color-secondary) 0%, var(--color-primary) 100%)',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                }}
+              >
+                Starts Here
+              </span>
+            </h2>
+
+            {/* Description - Dark text with good contrast */}
+            <p
+              className="mx-auto mt-4 max-w-xl text-[#1a1a2e]/80 sm:mt-5"
+              style={{
+                fontSize: 'clamp(0.95rem, 1.6vw, 1.15rem)',
+                lineHeight: '1.7',
+              }}
+            >
+              <span className="font-semibold text-[#1a1a2e]">One-on-one instruction</span>,
+              realistic <span className="font-semibold text-[#1a1a2e]">mock evaluations</span>, and
+              comprehensive oral preparation designed to help you approach your FAA practical test
+              with confidence.
+            </p>
+
+            {/* Cards Grid */}
+            <div className="mt-6 grid w-full gap-4 sm:grid-cols-2 md:mt-8 lg:gap-5">
+              {allCards.map((card, i) => {
+                const Icon = card.icon;
+                const step = String(i + 1).padStart(2, '0');
+
+                return (
+                  <div
+                    key={card.heading}
+                    className="group relative flex flex-col items-center rounded-sm border border-[#1a1a2e]/10 bg-white px-6 py-8 text-center shadow-[0_2px_14px_-8px_rgba(0,0,0,0.08)] transition-all duration-200 hover:border-[#1a1a2e]/20 hover:shadow-[0_8px_30px_-12px_rgba(0,0,0,0.15)] hover:-translate-y-0.5"
+                  >
+                    {/* Step marker */}
+                    <span className="absolute right-5 top-5 font-serif text-[11px] font-medium tracking-[0.2em] text-[#1a1a2e]/30">
+                      {step}
+                    </span>
+
+                    {/* Icon container */}
+                    <div className="relative mb-5 flex h-14 w-14 items-center justify-center rounded-full border border-[#1a1a2e]/10 bg-[#1a1a2e]/5 text-[#1a1a2e]/60 transition-colors group-hover:border-[#1a1a2e]/20 group-hover:text-[#1a1a2e]">
+                      <Icon size={20} className="relative z-10" />
+                    </div>
+
+                    <h3 className="text-lg font-semibold tracking-tight text-[#1a1a2e]">
+                      {card.heading}
+                    </h3>
+
+                    <p className="mt-2 max-w-[22ch] text-sm leading-6 text-[#1a1a2e]/70">
+                      {card.description}
+                    </p>
+                  </div>
+                );
+              })}
+            </div>
+
+            {/* CTA - Matching hero button style */}
+            <div className="mt-8 sm:mt-10">
+              <a
+                href="#programs"
+                className="group inline-flex h-12 items-center justify-center gap-2.5 rounded-sm bg-[#1a1a2e] px-7 text-[10px] font-semibold uppercase tracking-[0.15em] text-white shadow-[0_8px_30px_rgba(0,0,0,0.15)] transition-all duration-200 hover:bg-[#1a1a2e]/90 hover:scale-[1.02] hover:shadow-[0_12px_40px_rgba(0,0,0,0.2)] sm:px-8 sm:text-xs"
+              >
+                Explore More
+                <FaArrowRightLong className="transition-transform duration-200 group-hover:translate-x-1" />
+              </a>
+            </div>
           </div>
         </div>
       </div>

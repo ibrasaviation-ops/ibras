@@ -103,10 +103,10 @@ const FAQ = () => {
                     className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-full border text-sm transition-colors duration-200 cursor-pointer ${
                       isOpen
                         ? 'border-highlight/40 bg-primary/10 text-primary rotate-180'
-                        : 'border-ink-faint/25 bg-primary/[0.04] text-accent group-hover:border-highlight/40 group-hover:bg-primary/[0.08] '
+                        : 'border-ink-faint/25 bg-primary/[0.04] text-ink group-hover:border-highlight/40 group-hover:bg-primary/[0.08] '
                     }`}
                   >
-                    {isOpen ? <CgLoadbar /> : <FaPlus className="text-xs" />}
+                    {isOpen ? <CgLoadbar /> : <FaPlus className="text-xs " />}
                   </span>
                 </button>
 
