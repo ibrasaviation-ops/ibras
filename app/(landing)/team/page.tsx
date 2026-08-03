@@ -18,7 +18,7 @@ const InstructorPage = () => {
   ];
 
   return (
-    <main className="relative min-h-screen overflow-hidden bg-gradient-to-b from-[#F8FAFC] to-[#F0F4F8] px-5 py-24 md:px-8 md:py-32">
+    <main className="relative min-h-screen overflow-hidden bg-linear-to-b from-[#F8FAFC] to-[#F0F4F8] px-5 py-24 md:px-8 md:py-32">
       {/* Bright atmospheric overlay - clouds above an airport, morning sky */}
       <div className="absolute inset-0 pointer-events-none">
         {/* Subtle grid texture for depth */}
@@ -56,7 +56,7 @@ const InstructorPage = () => {
               >
                 Meet{' '}
                 <span className="relative inline-block">
-                  <span className="relative z-10 bg-gradient-to-r from-[#1F4E9A] to-[#5D84D6] bg-clip-text text-transparent">
+                  <span className="relative z-10 bg-linear-to-r from-[#1F4E9A] to-[#5D84D6] bg-clip-text text-transparent">
                     Ibrahim
                   </span>
                   <span className="absolute -bottom-1 left-0 right-0 h-1.5 rounded-full bg-[#1F4E9A]/20 blur-sm"></span>
@@ -77,7 +77,7 @@ const InstructorPage = () => {
             <div className="relative flex items-center justify-center">
               <div className="group relative w-full max-w-md overflow-hidden rounded-2xl border border-[#E2E8F0] bg-white p-2 shadow-xl transition-all duration-500 hover:shadow-2xl hover:border-[#1F4E9A]/25">
                 {/* Image Container */}
-                <div className="relative aspect-4/5 w-full overflow-hidden rounded-xl bg-gradient-to-br from-[#1F4E9A]/5 to-[#5D84D6]/5">
+                <div className="relative aspect-4/5 w-full overflow-hidden rounded-xl bg-linear-to-br from-[#1F4E9A]/5 to-[#5D84D6]/5">
                   <Image
                     src="/instructor.jpg"
                     alt="Ibrahim - Certified Flight Instructor standing next to an aircraft"
@@ -88,7 +88,7 @@ const InstructorPage = () => {
                   />
 
                   {/* Soft linear overlay for depth */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#050B16]/15 via-transparent to-transparent"></div>
+                  <div className="absolute inset-0 bg-linear-to-t from-[#050B16]/15 via-transparent to-transparent"></div>
                 </div>
 
                 {/* Decorative Elements - subtle radial highlights */}
@@ -104,9 +104,9 @@ const InstructorPage = () => {
 
           {/* Decorative Divider */}
           <div className="mt-16 flex items-center justify-center gap-4" aria-hidden="true">
-            <div className="h-px w-12 bg-gradient-to-r from-transparent to-[#1F4E9A]/30"></div>
+            <div className="h-px w-12 bg-linear-to-r from-transparent to-[#1F4E9A]/30"></div>
             <div className="h-2 w-2 rotate-45 border border-[#1F4E9A]/40"></div>
-            <div className="h-px w-12 bg-gradient-to-l from-transparent to-[#1F4E9A]/30"></div>
+            <div className="h-px w-12 bg-linear-to-l from-transparent to-[#1F4E9A]/30"></div>
           </div>
         </section>
 
@@ -128,7 +128,7 @@ const InstructorPage = () => {
                   className="group relative overflow-hidden rounded-2xl border border-[#E2E8F0] bg-white p-6 text-center shadow-md transition-all duration-300 hover:border-[#1F4E9A]/25 hover:shadow-xl hover:-translate-y-1"
                 >
                   {/* Soft gradient overlay on hover */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-[#1F4E9A]/5 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
+                  <div className="absolute inset-0 bg-linear-to-br from-[#1F4E9A]/5 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
 
                   {/* Subtle cloud glow inside stat cards */}
                   <div className="absolute -top-20 -right-20 h-40 w-40 rounded-full bg-[#5D84D6]/10 blur-3xl opacity-0 transition-opacity duration-500 group-hover:opacity-100"></div>

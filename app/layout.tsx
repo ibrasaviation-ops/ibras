@@ -8,24 +8,57 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://ibrasaviation.com'),
   title: {
     default: 'IBRAS Aviation',
-    template: '%s | IBRAS Aviation Academy',
+    template: '%s | IBRAS Aviation',
   },
+
   description:
-    'Professional FAA Part 61 flight training programs helping students become commercial pilots.',
+    'IBRAS Aviation Academy provides FAA Part 61 flight training in Florida. Start your journey from Private Pilot License (PPL) to Commercial Pilot and Certified Flight Instructor (CFI) with experienced instructors.',
   keywords: [
-    'Flight Training',
-    'Commercial Pilot',
+    'flight school Florida',
     'FAA Part 61',
-    'Pilot School',
-    'Aviation Academy',
+    'pilot training',
+    'commercial pilot training',
+    'private pilot license',
+    'instrument rating',
+    'CFI training',
+    'aviation academy',
+    'flight instructor',
+    'pilot academy USA',
   ],
+
+  authors: [{ name: 'IBRAS Aviation' }],
+  creator: 'IBRAS Aviation',
+  publisher: 'IBRAS Aviation',
+
+  category: 'Education',
+
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+      'max-video-preview': -1,
+    },
+  },
+
+  alternates: {
+    canonical: 'https://ibrasaviation.com',
+  },
+
   icons: {
     icon: '/logo-fav.png',
+    shortcut: '/logo-fav.png',
+    apple: '/apple-touch-icon.png',
   },
+
   openGraph: {
-    title: 'IBRAS Aviation Academy',
+    title: 'IBRAS Aviation',
     description: 'Become a commercial pilot through structured FAA flight training.',
     url: 'https://ibrasaviation.com',
     siteName: 'IBRAS Aviation Academy',
@@ -34,11 +67,18 @@ export const metadata: Metadata = {
         url: '/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'IBRAS Aviation Academy',
+        alt: 'IBRAS Aviation',
       },
     ],
     locale: 'en_US',
     type: 'website',
+  },
+
+  twitter: {
+    card: 'summary_large_image',
+    title: 'IBRAS Aviation',
+    description: 'Professional FAA Part 61 Flight Training.',
+    images: ['/og-image.png'],
   },
 };
 

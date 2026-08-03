@@ -9,7 +9,6 @@ export async function StudentRegistration(formData: FormData) {
 
     return {
       success: true,
-      status: 200,
       message: 'Registration submitted successfully.',
       data: formData,
     };
@@ -18,7 +17,6 @@ export async function StudentRegistration(formData: FormData) {
 
     return {
       success: false,
-      status: 500,
       message: error instanceof Error ? error.message : 'Something went wrong.',
       data: null,
     };

@@ -1,7 +1,6 @@
 import nodemailer from 'nodemailer';
 import path from 'path';
 import ejs from 'ejs';
-import fs from 'fs';
 
 import { fileURLToPath } from 'url';
 
@@ -17,7 +16,6 @@ const sendSchadualMeetingTemplatePath = path.join(
 
 const flightBookingEmailTemplatePath = path.join(__dirname, 'templates', 'FlightBookingMail.ejs');
 
-console.log('EMAIL_USER:', process.env.EMAIL_USER, 'EMAIL_PASS:', process.env.EMAIL_PASS);
 // Create transporter
 const transporter = nodemailer.createTransport({
   service: 'gmail',
@@ -131,7 +129,7 @@ export const sendSchadualMeetingEmail = async (data: any) => {
   } catch (error) {
     console.error('Error sending email:', error);
 
-    throw new Error('Failed to send registration email');
+    throw new Error('Failed to send meeting email');
   }
 };
 
@@ -163,6 +161,6 @@ export const sendFlightBookingEmail = async (data: any) => {
   } catch (error) {
     console.error('Error sending email:', error);
 
-    throw new Error('Failed to send registration email');
+    throw new Error('Failed to send booking email');
   }
 };

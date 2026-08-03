@@ -60,7 +60,8 @@ const selectStyles = {
 export default function AdmissionForm() {
   const [isMounted, setIsMounted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
-
+  const [successMessage, setSuccessMessage] = useState<string | null>(null);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const {
     register,
     control,
@@ -87,17 +88,37 @@ export default function AdmissionForm() {
 
   const onSubmit = async (data: FormData) => {
     setIsSubmitting(true);
+    setSuccessMessage(null);
+    setErrorMessage(null);
+
     try {
-      // Simulate API call
       const result = await StudentRegistration(data);
-      if (result?.status) {
-        toast.success('Successfully applied');
+
+      if (result.success) {
+        setSuccessMessage(
+          'Your application has been submitted successfully! Our admissions team will contact you shortly.'
+        );
+
+        reset();
+
+        setTimeout(() => {
+          setSuccessMessage(null);
+        }, 5000);
+      } else {
+        setErrorMessage(result.message || 'Something went wrong. Please try again later.');
+
+        setTimeout(() => {
+          setErrorMessage(null);
+        }, 5000);
       }
-      // Reset form after successful submission
-      reset();
     } catch (error) {
       console.error('Submission error:', error);
-      toast.error('Something went wrong, Try later');
+
+      setErrorMessage('Something went wrong. Please try again later.');
+
+      setTimeout(() => {
+        setErrorMessage(null);
+      }, 5000);
     } finally {
       setIsSubmitting(false);
     }
@@ -122,6 +143,48 @@ export default function AdmissionForm() {
       </div>
 
       <div className="relative z-10 max-w-4xl w-full rounded-2xl shadow-[0_8px_32px_rgba(0,0,0,0.08)] p-6 sm:p-10 md:p-12 transition-all bg-white border border-border/20">
+        {errorMessage && (
+          <div className="mb-6 rounded-xl border border-red-200 bg-red-50 p-4 text-sm text-red-700">
+            <div className="flex items-start gap-3">
+              <svg
+                className="mt-0.5 h-5 w-5 shrink-0 text-red-500"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                />
+              </svg>
+
+              <span>{errorMessage}</span>
+            </div>
+          </div>
+        )}
+        {successMessage && (
+          <div className="mb-6 rounded-xl border border-green-200 bg-green-50 p-4 text-sm text-green-700">
+            <div className="flex items-start gap-3">
+              <svg
+                className="mt-0.5 h-5 w-5 shrink-0 text-green-500"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                />
+              </svg>
+
+              <span>{successMessage}</span>
+            </div>
+          </div>
+        )}
         {/* Header */}
         <div className="mb-8">
           <h1 className="text-2xl sm:text-3xl font-semibold text-surface font-serif tracking-tight mb-2">

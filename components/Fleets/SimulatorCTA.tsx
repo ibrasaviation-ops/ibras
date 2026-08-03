@@ -6,8 +6,8 @@ const FleetCTA = () => {
   return (
     <section className="relative overflow-hidden border-t border-ink/10 bg-linear-to-b from-white via-[#F4F6FA] to-white px-6 py-24 text-center md:px-12 md:py-32">
       {/* Ambient background glow */}
-      <div className="pointer-events-none absolute inset-0 -z-0">
-        <div className="absolute left-1/2 top-0 h-[520px] w-[520px] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,rgba(93,132,214,0.08)_0%,transparent_70%)]" />
+      <div className="pointer-events-none absolute inset-0 z-0">
+        <div className="absolute left-1/2 top-0 h-130 w-130 -translate-x-1/2 rounded-full bg-[radial-gradient(circle,rgba(93,132,214,0.08)_0%,transparent_70%)]" />
       </div>
 
       <div className="relative mx-auto max-w-4xl">

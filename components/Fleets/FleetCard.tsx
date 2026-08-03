@@ -49,10 +49,10 @@ export default function FleetCard({ aircraft, index }: FleetCardProps) {
           />
 
           {/* Premium gradient overlay on hover */}
-          <div className="absolute inset-0 bg-gradient-to-t from-primary/30 via-transparent to-transparent opacity-0 hover:opacity-100 transition-opacity duration-500" />
+          <div className="absolute inset-0 bg-linear-to-t from-primary/30 via-transparent to-transparent opacity-0 hover:opacity-100 transition-opacity duration-500" />
 
           {/* Subtle shine effect */}
-          <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-700" />
+          <div className="absolute inset-0 bg-linear-to-tr from-transparent via-white/5 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-700" />
         </div>
       </div>
 
@@ -60,7 +60,7 @@ export default function FleetCard({ aircraft, index }: FleetCardProps) {
       <div className={`${!isEven ? 'order-2 md:order-1' : 'order-1 md:order-2'}`}>
         {/* Category label */}
         <div className="flex items-center gap-3 mb-3">
-          <div className="w-8 h-px bg-gradient-to-r from-secondary to-transparent" />
+          <div className="w-8 h-px bg-linear-to-r from-secondary to-transparent" />
           <span className="text-xs text-secondary font-semibold uppercase tracking-wider">
             {aircraft.category}
           </span>
@@ -81,7 +81,7 @@ export default function FleetCard({ aircraft, index }: FleetCardProps) {
                 key={idx}
                 className="group flex items-center gap-3 bg-white rounded-xl p-3 border border-ink/5 shadow-sm transition-all duration-300 hover:border-secondary/30 hover:shadow-[0_4px_20px_rgba(19,58,124,0.08)] hover:-translate-y-0.5"
               >
-                <div className="p-1.5 rounded-lg bg-gradient-to-br from-secondary/10 to-primary/10 group-hover:from-secondary/20 group-hover:to-primary/20 transition-all duration-300">
+                <div className="p-1.5 rounded-lg bg-linear-to-br from-secondary/10 to-primary/10 group-hover:from-secondary/20 group-hover:to-primary/20 transition-all duration-300">
                   <Icon className="w-4 h-4 text-secondary shrink-0" />
                 </div>
                 <div>

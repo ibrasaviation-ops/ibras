@@ -165,7 +165,7 @@ const TSAPage = () => {
         </dl>
 
         {/* US Citizens Note */}
-        <div className="mt-10 rounded-2xl border border-[#1F4E9A]/20 bg-[#1F4E9A]/[0.04] p-6 md:p-8">
+        <div className="mt-10 rounded-2xl border border-[#1F4E9A]/20 bg-[#1F4E9A]/4 p-6 md:p-8">
           <p className="text-sm leading-relaxed text-[#1E293B]">
             <strong className="text-[#050B16]">U.S. citizens</strong> do not need TSA approval but
             must present valid proof of citizenship to Ibras Aviation (such as a U.S. passport or
@@ -282,7 +282,7 @@ const TSAPage = () => {
                   </td>
                 </tr>
               ))}
-              <tr className="border-t border-[#E2E8F0] bg-[#1F4E9A]/[0.04]">
+              <tr className="border-t border-[#E2E8F0] bg-[#1F4E9A]/4">
                 <td className="px-6 py-4 text-sm font-semibold uppercase tracking-wide text-[#050B16]">
                   Total
                 </td>
@@ -311,7 +311,7 @@ const TSAPage = () => {
               account and scrolling down on the Home page to see a table listing all of your
               training events.
             </p>
-            <div className="rounded-2xl border border-[#1F4E9A]/20 bg-[#1F4E9A]/[0.04] p-6">
+            <div className="rounded-2xl border border-[#1F4E9A]/20 bg-[#1F4E9A]/4 p-6">
               <p className="text-sm font-medium text-[#050B16]">
                 <span className="text-[#1F4E9A]">Important:</span> You must select{' '}
                 <strong>Ibras Aviation</strong> as your flight provider to receive your clearance
