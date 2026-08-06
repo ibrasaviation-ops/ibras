@@ -53,21 +53,23 @@ const ServiceCard = ({ service }: ServiceCardProps) => {
   const Icon = service.icon;
 
   return (
-    <div className="group flex flex-col gap-4 rounded-3xl border border-border/10 bg-white/40 backdrop-blur-sm p-6 transition-all duration-300 hover:-translate-y-1 hover:bg-white/55 shadow-2xl cursor-pointer">
-      <div className="flex justify-between items-center gap-3.5">
-        {/* Icon container - 48x48 */}
-        <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-background/8 text-primary transition-colors duration-300 group-hover:bg-primary-hover/14">
-          <Icon size={20} aria-hidden="true" />
-        </div>
-
-        {/* Rounded pill label */}
-        <span className="inline-flex items-center rounded-full bg-border px-4 py-2 text-sm font-semibold text-white">
-          {service.label}
-        </span>
-      </div>
-
-      <p className="text-[0.925rem] leading-relaxed text-ink-muted">{service.description}</p>
+   <div className="group flex h-47.5 w-full flex-col gap-4 rounded-3xl border border-border/10 bg-white/40 p-6 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:bg-white/55 shadow-2xl cursor-pointer">
+  <div className="flex h-14 items-center justify-between gap-3">
+    {/* Icon */}
+    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-background/8 text-primary transition-colors duration-300 group-hover:bg-primary-hover/14">
+      <Icon size={20} aria-hidden="true" />
     </div>
+
+    {/* Label */}
+  <span className="flex min-h-10 w-fit max-w-55 items-center justify-center rounded-full bg-border px-4 py-2 text-center text-sm font-semibold leading-tight text-white">
+  {service.label}
+</span>
+  </div>
+
+  <p className="line-clamp-2 text-[0.925rem] leading-relaxed text-ink-muted">
+    {service.description}
+  </p>
+</div>
   );
 };
 

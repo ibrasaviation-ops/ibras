@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/set-state-in-effect */
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
@@ -249,7 +250,7 @@ export default function Navbar() {
       ref={menuRef}
       className="fixed inset-x-0 top-0 z-50 px-3 pt-3 transition-all duration-500 ease-out md:px-6 md:pt-5"
     >
-      <div className="mx-auto flex h-16 max-w-screen-2xl items-center justify-between rounded-full bg-background/95 px-5 shadow-[0_8px_32px_rgba(0,0,0,0.4)] backdrop-blur-xl md:h-17 md:px-8">
+      <div className="mx-auto flex h-16 max-w-screen-2xl items-center justify-between rounded-3xl bg-background/85 px-5 shadow-[0_8px_32px_rgba(0,0,0,0.4)] backdrop-blur-xl md:h-17 md:px-8">
         {/* Logo */}
         <button
           onClick={scrollToTop}

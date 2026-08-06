@@ -9,7 +9,7 @@ export default function Home() {
         {/* Background - No gradients, just clean overlay */}
         <div className="absolute inset-0">
           <video autoPlay muted loop playsInline className="h-full w-full object-cover">
-            <source src="/hero.mp4" type="video/mp4" />
+            <source src="/new-hero.mp4" type="video/mp4" />
           </video>
         </div>
 
