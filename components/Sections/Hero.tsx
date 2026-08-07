@@ -6,11 +6,13 @@ export default function Home() {
   return (
     <section id="hero">
       <div className="relative h-screen w-full snap-start overflow-hidden">
-        {/* Background - No gradients, just clean overlay */}
+        {/* Background - With overlay for video contrast */}
         <div className="absolute inset-0">
           <video autoPlay muted loop playsInline className="h-full w-full object-cover">
             <source src="/new-hero.mp4" type="video/mp4" />
           </video>
+          {/* ADD THIS: Dynamic overlay for video contrast */}
+          <div className="absolute inset-0 bg-linear-to-b from-transparent via-[#050B16]/25 to-[#050B16]/40" />
         </div>
 
         {/* Content */}

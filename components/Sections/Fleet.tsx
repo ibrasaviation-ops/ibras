@@ -1,16 +1,17 @@
 import Link from 'next/link';
 import { FaArrowRightLong } from 'react-icons/fa6';
-import { GoArrowDown } from 'react-icons/go';
 
 export default function Fleet() {
   return (
     <section id="fleet">
       <div className="relative h-screen w-full snap-start overflow-hidden">
-        {/* Background - No gradients, just clean overlay */}
+        {/* Background - With overlay for video contrast */}
         <div className="absolute inset-0">
           <video autoPlay muted loop playsInline className="h-full w-full object-cover">
             <source src="/fleet.mp4" type="video/mp4" />
           </video>
+          {/* ADD THIS: Dynamic overlay for video contrast */}
+          <div className="absolute inset-0 bg-linear-to-b from-transparent via-[#050B16]/25 to-[#050B16]/40" />
         </div>
 
         {/* Content */}
@@ -33,17 +34,18 @@ export default function Fleet() {
               >
                 Modern Aircraft
                 <br />
-                <span
-                  className="inline-block bg-clip-text text-transparent drop-shadow-[0_0_20px_rgba(255,215,0,0.2)] transition-all duration-300 hover:-translate-y-0.5"
-                  style={{
-                    backgroundImage:
-                      'linear-gradient(135deg, var(--color-secondary) 0%, var(--color-primary) 100%)',
-                    WebkitBackgroundClip: 'text',
-                    WebkitTextFillColor: 'transparent',
-                  }}
-                >
-                  Personalized Instruction
-                </span>
+                 <span
+                className="inline-block bg-clip-text text-transparent drop-shadow-[0_0_20px_rgba(255,215,0,0.2)] transition-all duration-300 hover:-translate-y-0.5"
+                style={{
+                  backgroundImage:
+                    'linear-gradient(135deg, var(--color-secondary) 0%, var(--color-primary) 100%)',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                }}
+              >
+               Personalized Instruction
+              </span>
+              
               </h2>
 
               {/* Description - White with good contrast, matching hero */}
