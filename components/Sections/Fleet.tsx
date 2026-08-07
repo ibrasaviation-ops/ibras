@@ -11,7 +11,7 @@ export default function Fleet() {
             <source src="/fleet.mp4" type="video/mp4" />
           </video>
           {/* ADD THIS: Dynamic overlay for video contrast */}
-          <div className="absolute inset-0 bg-linear-to-b from-transparent via-[#050B16]/25 to-[#050B16]/40" />
+          <div className="absolute inset-0 bg-linear-to-b from-transparent via-[#050B16]/10 to-[#050B16]/20" />
         </div>
 
         {/* Content */}
