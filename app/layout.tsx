@@ -27,6 +27,10 @@ export const metadata: Metadata = {
     'aviation academy',
     'flight instructor',
     'pilot academy USA',
+    'Aviation',
+    'Flight Training',
+    'Pilot School',
+    'IBRAS'
   ],
 
   authors: [{ name: 'IBRAS Aviation' }],
