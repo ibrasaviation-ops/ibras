@@ -8,7 +8,7 @@ export default function Experience() {
         {/* Background - No gradients, just clean overlay */}
         <div className="absolute inset-0">
           <video autoPlay muted loop playsInline className="h-full w-full object-cover">
-            <source src="/new-team.mp4" type="video/mp4" />
+            <source src="/team.mp4" type="video/mp4" />
           </video>
           {/* ADD THIS: Dynamic overlay for video contrast */}
           <div className="absolute inset-0 bg-linear-to-b from-transparent via-[#050B16]/25 to-[#050B16]/40" />
